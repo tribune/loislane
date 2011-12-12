@@ -2,8 +2,8 @@
 # bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 # Add this line to your .profile:
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-if [[ -s "~/.rvm/environments/ree@loislane" ]] ; then
-  . "~/.rvm/environments/ree@loislane"
+if [[ -s "~/.rvm/environments/ruby-1.9.3@loislane" ]] ; then
+  . "~/.rvm/environments/ruby-1.9.3@loislane"
 else
-  rvm --create use "ree@loislane"
+  rvm --create use "ruby-1.9.3-p0@loislane"
 fi

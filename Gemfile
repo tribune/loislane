@@ -1,15 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '3.0.10'
 
 gem 'mysql2'
 gem 'net-ldap'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'ultraviolet'
+gem 'ultraviolet', :git => "git://github.com/spox/ultraviolet.git"
 gem 'rack-codehighlighter'
 gem 'jammit'
 gem 'kaminari'
@@ -37,5 +34,6 @@ group :development, :test do
   gem 'wirble'
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'rack-debug', :git => 'git://github.com/ddollar/rack-debug.git', :tag => 'stable-1.4'
+  gem 'cover_me', '>= 1.2.0', :require => false
+  gem 'rack-debug19'
 end
