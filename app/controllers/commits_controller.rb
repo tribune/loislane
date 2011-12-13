@@ -47,6 +47,8 @@ class CommitsController < ApplicationController
 
   # PUT /commits/1
   def update
+    @commit = Commit.find(params[:id])
+
     if @commit.update_attributes(params[:commit])
       redirect_to @commit, :notice => 'Commit was successfully updated.'
     else
