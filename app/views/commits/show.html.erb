@@ -23,7 +23,7 @@
 </div>
 
 <div id="diff">
-  <pre><%= @commit.diff_source if @commit.diff %></pre>
+  <pre><%= @commit.diff_source unless @commit.diff.blank? %></pre>
   <div id="download"><%= link_to "Download", @commit.diff.url %></div>
 </div>
 
