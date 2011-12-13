@@ -1,9 +1,15 @@
 class CommitsController < ApplicationController
-  before_filter :verify_ownership, :only => [:edit, :update, :destroy]
+  before_filter :verify_ownership, :only => [:destroy]
 
   # GET /commits
   def index
-    @commits = Commit.all.page(params[:page])
+    @commits = Commit.page(params[:page] || 1)
+  end
+
+  def archive
+    @commits = Commit.where(:closed => true).page(params[:page] || 1).per(10)
+
+    render :index
   end
 
   # GET /commits/1
@@ -19,6 +25,7 @@ class CommitsController < ApplicationController
 
   # GET /commits/1/edit
   def edit
+    @commit = Commit.find(params[:id])
   end
 
   # POST /commits

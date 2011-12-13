@@ -1,14 +1,14 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require 'rvm/capistrano'
 set :rvm_type, :user
-set :rvm_ruby_string, 'ree-1.8.7-2011.03@loislane'
+set :rvm_ruby_string, 'ruby-1.9.3-p0@loislane'
 
 set :deploy_via, :copy
 
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 
 set :application, "loislane"
-set :repository, "git@github.com:tonycoco/#{application}.git"
+set :repository, "git@github.com:spra85/#{application}.git"
 set :scm, "git"
 set :branch, "master"
 set :user, "tribunedev"

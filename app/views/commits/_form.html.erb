@@ -16,11 +16,13 @@
     <%= f.text_field :message %>
   </div>
 
-  <div class="input file_upload">
-    <%= f.label :diff %>
-    <%= f.file_field :diff %>
-    <%= f.hidden_field :diff_cache %>
-  </div>
+  <% if current_user == @commit.user %>
+    <div class="input file_upload">
+      <%= f.label :diff %>
+      <%= f.file_field :diff %>
+      <%= f.hidden_field :diff_cache %>
+    </div>
+  <% end %>
 
   <div class="checkbox">
     <%= f.label :closed %>

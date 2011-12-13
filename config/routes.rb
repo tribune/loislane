@@ -1,5 +1,5 @@
 Loislane::Application.routes.draw do
-  get "archive" => "commits#index", :as => "archive"
+  get "archive" => "commits#archive", :as => "archive"
 
   get "profile" => "users#edit", :as => "profile"
   resources :users, :only => [:update, :destroy]
