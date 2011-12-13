@@ -3,11 +3,11 @@ class CommitsController < ApplicationController
 
   # GET /commits
   def index
-    @commits = Commit.page(params[:page] || 1)
+    @commits = Commit.order("updated_at DESC").page(params[:page] || 1)
   end
 
   def archive
-    @commits = Commit.where(:closed => true).page(params[:page] || 1).per(10)
+    @commits = Commit.where(:closed => true).order("updated_at DESC").page(params[:page] || 1).per(10)
 
     render :index
   end
