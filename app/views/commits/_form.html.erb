@@ -16,7 +16,7 @@
     <%= f.text_field :message %>
   </div>
 
-  <% if current_user == @commit.user %>
+  <% if (current_user == @commit.user) || @commit.new_record? %>
     <div class="input file_upload">
       <%= f.label :diff %>
       <%= f.file_field :diff %>
