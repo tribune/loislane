@@ -5,6 +5,13 @@ class Voice < ActiveRecord::Base
   validates_presence_of :comment
   validates_presence_of :tone
 
+  after_save :notify_submitter
+
+  def notify_submitter
+    return if Rails.env.test? || !commit.user
+    MrMcFeely.speedy_delivery(commit.user).deliver
+  end
+
   def self.tones
     ["comment", "concern", "approval"]
   end

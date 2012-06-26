@@ -8,3 +8,4 @@ public/uploads/**/*
 public/assets
 public/assets/**/*
 config/initializers/ldap.rb
+*.swp
