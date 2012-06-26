@@ -14,13 +14,14 @@
       when "approval"
         "an approval of"
       end %>
-          
-      <%= @commenter.username.titlecase %> has posted <%= voice_phrase %> your <%= link_to "submission", @url %>.<br/>
+
+      <%= @commenter.username.titlecase %> has posted <%= voice_phrase %> your submission.<br/><br/>
+      <%= @url %><br/>
     </p>
-    <p><em><%= ["It's kind of fun to do the impossible.", 
+    <p><%= ["It's kind of fun to do the impossible.",
             "The more you do, the more you can do.",
             "If you don't have time to do it right, you must have time to do it over.",
             "Your life does not get better by chance, it gets better by change.",
-            "Knowledge is learning something every day. Wisdom is letting go of something every day."].sample %></em></p>
+            "Knowledge is learning something every day. Wisdom is letting go of something every day."].sample %></p>
   </body>
 </html>
