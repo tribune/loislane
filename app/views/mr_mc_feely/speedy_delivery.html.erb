@@ -4,13 +4,23 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Lois Lane wants to tell you something, <%= @submitter.username %></h1>
+    <h1>Lois Lane wants to tell you something, <%= @submitter.username.titlecase %>.</h1>
     <p>
-      <%= @commenter.username %> has commented/approved/critiqued your submission.<br/>
+      <% voice_phrase = case @voice.tone
+      when "comment"
+        "a comment on"
+      when "concern"
+        "a concern about"
+      when "approval"
+        "an approval of"
+      end %>
+          
+      <%= @commenter.username.titlecase %> has posted <%= voice_phrase %> your <%= link_to "submission", @url %>.<br/>
     </p>
-    <p>
-      To view your submission, just follow this link: <%= @url %>.
-    </p>
-    <p>Code review soon and code review often!</p>
+    <p><em><%= ["It's kind of fun to do the impossible.", 
+            "The more you do, the more you can do.",
+            "If you don't have time to do it right, you must have time to do it over.",
+            "Your life does not get better by chance, it gets better by change.",
+            "Knowledge is learning something every day. Wisdom is letting go of something every day."].sample %></em></p>
   </body>
 </html>
