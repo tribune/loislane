@@ -9,3 +9,4 @@ public/assets
 public/assets/**/*
 config/initializers/ldap.rb
 *.swp
+config/email_credentials.yml

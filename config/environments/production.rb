@@ -46,4 +46,6 @@ Loislane::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.domain = 'loislane.xserve.tii.trb'
 end

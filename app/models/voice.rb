@@ -9,7 +9,7 @@ class Voice < ActiveRecord::Base
 
   def notify_submitter
     return if Rails.env.test? || !commit.user
-    MrMcFeely.speedy_delivery(commit.user).deliver
+    MrMcFeely.speedy_delivery(self).deliver
   end
 
   def self.tones

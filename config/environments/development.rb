@@ -24,6 +24,8 @@ Loislane::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'loislane.local' }
 
+  config.domain = 'localhost:3000'
+
   # Debugger
   # require 'rack/debug'
   # config.middleware.use Rack::Debug
