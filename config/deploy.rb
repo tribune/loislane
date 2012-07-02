@@ -8,7 +8,7 @@ set :deploy_via, :copy
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 
 set :application, "loislane"
-set :repository, "git@github.com:spra85/#{application}.git"
+set :repository, "git@github.com:tribune/#{application}.git"
 set :scm, "git"
 set :branch, "master"
 set :user, "tribunedev"
