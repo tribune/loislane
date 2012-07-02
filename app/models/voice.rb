@@ -8,7 +8,7 @@ class Voice < ActiveRecord::Base
   after_save :notify_submitter
 
   def notify_submitter
-    return if Rails.env.test? || user == commit.user
+    return true if Rails.env.test? || user == commit.user
     MrMcFeely.speedy_delivery(self).deliver
   end
 
