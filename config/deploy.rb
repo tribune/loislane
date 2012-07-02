@@ -30,6 +30,7 @@ namespace :deploy do
   task :symlink_shared do
     run "ln -snf #{shared_path}/configs/ldap.rb #{release_path}/config/initializers"
     run "ln -snf #{shared_path}/uploads #{release_path}/public/uploads"
+    run "ln -snf #{shared_path}/configs/email_credentials.yml #{release_path}/config/email_credentials.yml"
     run "cd #{release_path} && bundle install --quiet --without development test"
   end
 end
